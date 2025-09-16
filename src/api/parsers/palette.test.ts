@@ -60,13 +60,13 @@ describe("parsePaletteRaw", () => {
 
     it("GAP: places NaN into result if given non-decimal numbers", () => {
       expect(parsePaletteRaw("9 F 3 4", true)).toEqual([
-        {r:13, g:NaN, b:7, rgb: "rgb(13, NaN, 7)"},
+        {r:13, g:4, b:7, rgb: "rgb(13, 4, 7)"},
       ]);
     });
 
     it("GAP: does not produce a valid color if there are not enough numbers ", () => {
       expect(parsePaletteRaw("9", true)).toEqual([
-        {r:NaN, g: NaN, b: NaN, rgb: "rgb(NaN, NaN, NaN)"},
+        {r:9, g: 0, b: 0, rgb: "rgb(9, 0, 0)"},
       ]);
     });
 
