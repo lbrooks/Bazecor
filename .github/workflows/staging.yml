@@ -25,9 +25,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-13
-          - os: windows-2019
-          - os: ubuntu-20.04
+          - os: macos-latest
+          - os: windows-latest
+          - os: ubuntu-latest
     steps:
       - uses: actions/setup-python@v5
         with:
@@ -55,19 +55,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, windows-2019, macos-13]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         target_arch: [arm, amd64]
         include:
-          - os: ubuntu-20.04
+          - os: ubuntu-latest
             target_os: linux
-          - os: windows-2019
+          - os: windows-latest
             target_os: windows
-          - os: macOS-13
+          - os: macOS-latest
             target_os: darwin
         exclude:
-          - os: windows-2019
+          - os: windows-latest
             target_arch: arm
-          - os: ubuntu-20.04
+          - os: ubuntu-latest
             target_arch: arm
     runs-on: ${{ matrix.os }}
     needs: [testing]

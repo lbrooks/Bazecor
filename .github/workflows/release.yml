@@ -23,9 +23,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-13
-          - os: windows-2019
-          - os: ubuntu-20.04
+          - os: macos-latest
+          - os: windows-latest
+          - os: ubuntu-latest
     steps:
       - uses: actions/setup-python@v4
         with:
@@ -60,9 +60,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-13
-          - os: windows-2019
-          - os: ubuntu-20.04
+          - os: macos-latest
+          - os: windows-latest
+          - os: ubuntu-latest
 
     steps:
       - uses: actions/setup-python@v4
